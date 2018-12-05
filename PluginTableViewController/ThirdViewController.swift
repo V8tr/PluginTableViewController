@@ -26,9 +26,7 @@ class ThirdViewController: UIViewController {
         }
         
         let table = PluginTableViewController(dataSource: dataSource, configurator: configurator)
-        
-        table.tableView.register(TableCell.self, forCellReuseIdentifier: configurator.reuseIdentifier)
-        
+                
         addChildViewController(table)
     }
 }

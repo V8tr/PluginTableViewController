@@ -8,15 +8,16 @@
 
 import UIKit
 
-class PluginTableViewController<DataSource: DataSourceType, Configurator: ConfiguratorType>: UITableViewController where DataSource.Item == Configurator.Item {
+class PluginTableViewController<Item, Cell: UITableViewCell>: UITableViewController {
     
-    let dataSource: DataSource
-    let configurator: Configurator
+    let dataSource: DataSource<Item>
+    let configurator: Configurator<Item, Cell>
     
-    init(dataSource: DataSource, configurator: Configurator) {
-        self.configurator = configurator
+    init(dataSource: DataSource<Item>, configurator: Configurator<Item, Cell>) {
         self.dataSource = dataSource
+        self.configurator = configurator
         super.init(nibName: nil, bundle: nil)
+        configurator.registerCells(in: tableView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +34,6 @@ class PluginTableViewController<DataSource: DataSourceType, Configurator: Config
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = dataSource.item(at: indexPath)
-        let cell = configurator.cell(for: item, tableView: tableView, indexPath: indexPath)
-        return configurator.configure(cell: cell, item: item, tableView: tableView, indexPath: indexPath)
+        return configurator.configuredCell(for: item, tableView: tableView, indexPath: indexPath)
     }
 }

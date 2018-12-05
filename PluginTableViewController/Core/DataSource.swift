@@ -8,21 +8,7 @@
 
 import Foundation
 
-protocol DataSourceType {
-    associatedtype Item
-    
-    func numberOfSections() -> Int
-    func numberOfItems(in section: Int) -> Int
-    func item(row: Int, section: Int) -> Item
-}
-
-extension DataSourceType {
-    func item(at indexPath: IndexPath) -> Item {
-        return item(row: indexPath.row, section: indexPath.section)
-    }
-}
-
-struct DataSource<Item>: DataSourceType {
+struct DataSource<Item> {
     var sections: [Section<Item>]
     
     func numberOfSections() -> Int {
@@ -34,7 +20,7 @@ struct DataSource<Item>: DataSourceType {
         return sections[section].items.count
     }
     
-    func item(row: Int, section: Int) -> Item {
-        return sections[section].items[row]
+    func item(at indexPath: IndexPath) -> Item {
+        return sections[indexPath.section].items[indexPath.row]
     }
 }

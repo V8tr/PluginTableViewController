@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80741DA421B7D97C002E8E31 /* CombinedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */; };
+		80741DA921B7E99A002E8E31 /* NibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80741DA721B7E99A002E8E31 /* NibCell.swift */; };
+		80741DAA21B7E99A002E8E31 /* NibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80741DA821B7E99A002E8E31 /* NibCell.xib */; };
 		80D864202195AB1F0040BC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D8641F2195AB1F0040BC23 /* AppDelegate.swift */; };
 		80D864252195AB1F0040BC23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D864232195AB1F0040BC23 /* Main.storyboard */; };
 		80D864272195AB210040BC23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D864262195AB210040BC23 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedDataSource.swift; sourceTree = "<group>"; };
+		80741DA721B7E99A002E8E31 /* NibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibCell.swift; sourceTree = "<group>"; };
+		80741DA821B7E99A002E8E31 /* NibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibCell.xib; sourceTree = "<group>"; };
 		80D8641C2195AB1F0040BC23 /* PluginTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluginTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D8641F2195AB1F0040BC23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D864242195AB1F0040BC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,9 +92,12 @@
 			children = (
 				80D864422195BFD50040BC23 /* Configurator.swift */,
 				80D8643E2195BFC90040BC23 /* DataSource.swift */,
+				80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */,
 				80D8643C2195BFAE0040BC23 /* PluginTableViewController.swift */,
 				80D864402195BFCF0040BC23 /* Section.swift */,
 				80D864442195C0000040BC23 /* TableCell.swift */,
+				80741DA721B7E99A002E8E31 /* NibCell.swift */,
+				80741DA821B7E99A002E8E31 /* NibCell.xib */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80D8642A2195AB210040BC23 /* LaunchScreen.storyboard in Resources */,
+				80741DAA21B7E99A002E8E31 /* NibCell.xib in Resources */,
 				80D864272195AB210040BC23 /* Assets.xcassets in Resources */,
 				80D864252195AB1F0040BC23 /* Main.storyboard in Resources */,
 			);
@@ -177,6 +187,7 @@
 			files = (
 				80D864452195C0000040BC23 /* TableCell.swift in Sources */,
 				80D8643F2195BFC90040BC23 /* DataSource.swift in Sources */,
+				80741DA921B7E99A002E8E31 /* NibCell.swift in Sources */,
 				80D864492195C0B40040BC23 /* UIViewController+Ext.swift in Sources */,
 				80D864432195BFD50040BC23 /* Configurator.swift in Sources */,
 				80D864392195BF920040BC23 /* SecondViewController.swift in Sources */,
@@ -185,6 +196,7 @@
 				80D864412195BFCF0040BC23 /* Section.swift in Sources */,
 				80D8643D2195BFAE0040BC23 /* PluginTableViewController.swift in Sources */,
 				80D864202195AB1F0040BC23 /* AppDelegate.swift in Sources */,
+				80741DA421B7D97C002E8E31 /* CombinedDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
