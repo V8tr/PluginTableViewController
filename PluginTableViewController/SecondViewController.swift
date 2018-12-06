@@ -20,14 +20,14 @@ class SecondViewController: UIViewController {
         let section1 = Section(items: ["1", "2", "3"])
         let dataSource = DataSource(sections: [section0, section1])
         
-        let configurator = Configurator(reuseIdentifier: "NibCell") { (cell, model: String, tableView, indexPath) -> NibCell in
+        let configurator = Configurator { (cell, model: String, tableView, indexPath) -> NibCell in
             cell.textLabel?.text = model
             return cell
         }
         
         let table = PluginTableViewController(dataSource: dataSource, configurator: configurator)
                 
-        addChildViewController(table)
+        add(child: table, container: view)
     }
 
 }

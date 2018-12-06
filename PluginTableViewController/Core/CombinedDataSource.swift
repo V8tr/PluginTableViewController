@@ -26,7 +26,7 @@ struct CombinedDataSource<Item, Configurator: ConfiguratorType> where Item == Co
     }
     
     func reuseIdentifer(for item: Item, indexPath: IndexPath) -> String {
-        return configurator.reuseIdentifer(for: item, indexPath: indexPath)
+        return configurator.reuseIdentifier(for: item, indexPath: indexPath)
     }
     
     func configuredCell(for item: Item, tableView: UITableView, indexPath: IndexPath) -> Configurator.Cell {

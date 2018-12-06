@@ -8,12 +8,12 @@
 
 import UIKit
 
-class PluginTableViewController<Item, Cell: UITableViewCell>: UITableViewController {
+class PluginTableViewController<Configurator: ConfiguratorType>: UITableViewController {
     
-    let dataSource: DataSource<Item>
-    let configurator: Configurator<Item, Cell>
+    let dataSource: DataSource<Configurator.Item>
+    let configurator: Configurator
     
-    init(dataSource: DataSource<Item>, configurator: Configurator<Item, Cell>) {
+    init(dataSource: DataSource<Configurator.Item>, configurator: Configurator) {
         self.dataSource = dataSource
         self.configurator = configurator
         super.init(nibName: nil, bundle: nil)

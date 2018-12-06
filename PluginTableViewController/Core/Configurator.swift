@@ -13,7 +13,7 @@ protocol ConfiguratorType {
     associatedtype Item
     associatedtype Cell: UITableViewCell
     
-    func reuseIdentifer(for item: Item, indexPath: IndexPath) -> String
+    func reuseIdentifier(for item: Item, indexPath: IndexPath) -> String
     func configure(cell: Cell, item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell
     func registerCells(in tableView: UITableView)
 }
@@ -21,7 +21,7 @@ protocol ConfiguratorType {
 extension ConfiguratorType {
     
     func configuredCell(for item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell {
-        let reuseIdentifier = reuseIdentifer(for: item, indexPath: indexPath)
+        let reuseIdentifier = self.reuseIdentifier(for: item, indexPath: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Cell
         return self.configure(cell: cell, item: item, tableView: tableView, indexPath: indexPath)
     }
@@ -30,10 +30,10 @@ extension ConfiguratorType {
 struct Configurator<Item, Cell: UITableViewCell>: ConfiguratorType {
     typealias CellConfigurator = (Cell, Item, UITableView, IndexPath) -> Cell
     
-    let reuseIdentifier: String
     let configurator: CellConfigurator
+    let reuseIdentifier = "\(Cell.self)"
     
-    func reuseIdentifer(for item: Item, indexPath: IndexPath) -> String {
+    func reuseIdentifier(for item: Item, indexPath: IndexPath) -> String {
         return reuseIdentifier
     }
     
@@ -49,21 +49,5 @@ struct Configurator<Item, Cell: UITableViewCell>: ConfiguratorType {
         } else {
             tableView.register(Cell.self, forCellReuseIdentifier: reuseIdentifier)
         }
-    }
-}
-
-struct AggregateConfigurator<Item>: ConfiguratorType {
-    typealias CellConfigurator = (UITableViewCell, Item, UITableView, IndexPath) -> UITableViewCell
-
-    func reuseIdentifer(for item: Item, indexPath: IndexPath) -> String {
-        return ""
-    }
-    
-    func configure(cell: UITableViewCell, item: Item, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
-    func registerCells(in tableView: UITableView) {
-        
     }
 }
