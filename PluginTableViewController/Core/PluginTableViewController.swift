@@ -20,9 +20,8 @@ class PluginTableViewController<Configurator: ConfiguratorType>: UITableViewCont
         configurator.registerCells(in: tableView)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) { fatalError() }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource.numberOfSections()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80741DA421B7D97C002E8E31 /* CombinedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */; };
 		80741DA921B7E99A002E8E31 /* NibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80741DA721B7E99A002E8E31 /* NibCell.swift */; };
 		80741DAA21B7E99A002E8E31 /* NibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80741DA821B7E99A002E8E31 /* NibCell.xib */; };
 		80D864202195AB1F0040BC23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D8641F2195AB1F0040BC23 /* AppDelegate.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedDataSource.swift; sourceTree = "<group>"; };
 		80741DA721B7E99A002E8E31 /* NibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibCell.swift; sourceTree = "<group>"; };
 		80741DA821B7E99A002E8E31 /* NibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NibCell.xib; sourceTree = "<group>"; };
 		80D8641C2195AB1F0040BC23 /* PluginTableViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PluginTableViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +55,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8019F73E21C1198F00013D06 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80741DA721B7E99A002E8E31 /* NibCell.swift */,
+				80741DA821B7E99A002E8E31 /* NibCell.xib */,
+				80D864442195C0000040BC23 /* TableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8019F73F21C1199600013D06 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80D864362195BF860040BC23 /* FirstViewController.swift */,
+				80D864382195BF920040BC23 /* SecondViewController.swift */,
+				80D8643A2195BF990040BC23 /* ThirdViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8019F74021C1199E00013D06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80D864482195C0B40040BC23 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		80D864132195AB1F0040BC23 = {
 			isa = PBXGroup;
 			children = (
@@ -77,10 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				80D8641F2195AB1F0040BC23 /* AppDelegate.swift */,
-				80D864362195BF860040BC23 /* FirstViewController.swift */,
-				80D864382195BF920040BC23 /* SecondViewController.swift */,
-				80D8643A2195BF990040BC23 /* ThirdViewController.swift */,
-				80D864482195C0B40040BC23 /* UIViewController+Ext.swift */,
+				8019F73F21C1199600013D06 /* View Controllers */,
+				8019F74021C1199E00013D06 /* Extensions */,
+				8019F73E21C1198F00013D06 /* Cells */,
 				80D864462195C0240040BC23 /* Core */,
 				80D864472195C0480040BC23 /* Supporting Files */,
 			);
@@ -92,12 +117,8 @@
 			children = (
 				80D864422195BFD50040BC23 /* Configurator.swift */,
 				80D8643E2195BFC90040BC23 /* DataSource.swift */,
-				80741DA321B7D97C002E8E31 /* CombinedDataSource.swift */,
 				80D8643C2195BFAE0040BC23 /* PluginTableViewController.swift */,
 				80D864402195BFCF0040BC23 /* Section.swift */,
-				80D864442195C0000040BC23 /* TableCell.swift */,
-				80741DA721B7E99A002E8E31 /* NibCell.swift */,
-				80741DA821B7E99A002E8E31 /* NibCell.xib */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -196,7 +217,6 @@
 				80D864412195BFCF0040BC23 /* Section.swift in Sources */,
 				80D8643D2195BFAE0040BC23 /* PluginTableViewController.swift in Sources */,
 				80D864202195AB1F0040BC23 /* AppDelegate.swift in Sources */,
-				80741DA421B7D97C002E8E31 /* CombinedDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

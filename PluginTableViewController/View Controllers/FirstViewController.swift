@@ -29,5 +29,4 @@ class FirstViewController: UIViewController {
         
         add(child: table, container: view)
     }
-
 }
