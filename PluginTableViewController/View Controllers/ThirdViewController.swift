@@ -58,8 +58,8 @@ private struct AggregateConfigurator: ConfiguratorType {
             return anotherCellConfigurator.reuseIdentifier
         }
     }
-    
-    func configure(cell: UITableViewCell, item: Cell, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+
+    func configuredCell(for item: Cell, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         switch item {
         case .cell(let model):
             return cellConfigurator.configuredCell(for: model, tableView: tableView, indexPath: indexPath)
