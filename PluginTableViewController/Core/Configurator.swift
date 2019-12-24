@@ -14,17 +14,8 @@ protocol ConfiguratorType {
     associatedtype Cell: UITableViewCell
     
     func reuseIdentifier(for item: Item, indexPath: IndexPath) -> String
-    func configure(cell: Cell, item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell
     func registerCells(in tableView: UITableView)
-}
-
-extension ConfiguratorType {
-    
-    func configuredCell(for item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell {
-        let reuseIdentifier = self.reuseIdentifier(for: item, indexPath: indexPath)
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Cell
-        return self.configure(cell: cell, item: item, tableView: tableView, indexPath: indexPath)
-    }
+    func configuredCell(for item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell
 }
 
 struct Configurator<Item, Cell: UITableViewCell>: ConfiguratorType {
@@ -49,5 +40,11 @@ struct Configurator<Item, Cell: UITableViewCell>: ConfiguratorType {
         } else {
             tableView.register(Cell.self, forCellReuseIdentifier: reuseIdentifier)
         }
+    }
+
+    func configuredCell(for item: Item, tableView: UITableView, indexPath: IndexPath) -> Cell {
+            let reuseIdentifier = self.reuseIdentifier(for: item, indexPath: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Cell
+            return self.configure(cell: cell, item: item, tableView: tableView, indexPath: indexPath)
     }
 }
